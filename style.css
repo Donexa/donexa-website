@@ -398,34 +398,53 @@ footer {
     width: 7rem;
 }
 
-a:hover{
+a:hover {
     font-weight: bold;
     cursor: pointer;
 }
 
-.closer{
-   background-color: var(--card); 
-   border-top: .1rem solid var(--dividerColor);
+.closer {
+    background-color: var(--card);
+    border-top: .1rem solid var(--dividerColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2rem;
+}
+
+.closer select, .closer select:focus{
+    width: fit-content;
+    border: none;
+}
+
+
+@media screen and (max-width: 700px) {
+    .closer{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 }
 
 
 @media screen and (max-width : 1024px) {
-    .nav-header{
+    .nav-header {
         padding: .5rem 2rem;
     }
-    .nav-header .social-nav{
+
+    .nav-header .social-nav {
         display: none;
     }
 
-    .nav-header .contact-nav{
+    .nav-header .contact-nav {
         display: flex;
     }
 
-    .mail-contact p{
+    .mail-contact p {
         display: none;
     }
 
-    .contact-nav p{
+    .contact-nav p {
         font-size: small;
         white-space: nowrap;
     }
@@ -434,53 +453,56 @@ a:hover{
         padding: 2rem;
     }
 
-    .nav{
+    .nav {
         padding: .5rem 1.5rem;
     }
 
-    #about{
+    #about {
         display: flex;
         flex-direction: column;
         width: 100%;
         padding: 0;
     }
 
-    #about-img-large,.about-card {
+    #about-img-large,
+    .about-card {
         width: 100%;
     }
 
-    .d-padding{
+    .d-padding {
         padding: 2rem;
     }
 
-    .industries-displayer{
+    .industries-displayer {
         display: flex;
         flex-direction: column;
         row-gap: 1rem;
         padding: 2rem 0rem;
     }
 
-    .industries-displayer h1{
+    .industries-displayer h1 {
         height: auto;
     }
 
-    #guarantie{
+    #guarantie {
         /* padding: 2rem; */
         display: flex;
         flex-direction: column;
         padding: 3rem 0rem;
     }
 
-    #contact-us{
+    #contact-us {
         width: 100%;
         padding: 2rem;
     }
 
-    .contact-us-form{
+    .contact-us-form {
         padding: 0;
     }
 
     #contact-us h1 {
-        text-align:start;
+        text-align: start;
     }
+
+   
 }
