@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="OpenCarenet CHE - Enabling community health workers to collect health data efficiently.">
+    <title>OpenCarenet CHE | App Details & Privacy Policy</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb', // Blue
+                        secondary: '#1e293b', // Slate
+                        accent: '#10b981', // Emerald/Green for health
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-sm px-8 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-notes-medical text-primary text-2xl"></i>
+                <span class="text-xl font-bold text-secondary">OpenCarenet CHE</span>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-semibold text-secondary">
+                <a href="#features" class="hover:text-primary transition">Features</a>
+                <a href="#details" class="hover:text-primary transition">Project Details</a>
+                <a href="#privacy-policy" class="hover:text-primary transition">Privacy Policy</a>
+                <a href="/" class="text-slate-400 hover:text-primary transition">Back to Donexa</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-secondary text-white py-20 px-8">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            <div class="md:col-span-2 space-y-6">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full"><i
+                            class="fa-brands fa-google-play mr-1"></i> Google Play</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                    Enabling community health workers to collect data <span class="text-primary">efficiently.</span>
+                </h1>
+                <p class="text-lg text-slate-300 leading-relaxed">
+                    A robust and user-friendly application tailored for community health workers, facilitating seamless
+                    data collection, management, and reporting. Empowering health professionals to efficiently track
+                    patient information and aggregate primary data, even in areas with limited internet access.
+                </p>
+                <div class="pt-4 flex space-x-4">
+                    <a href="https://play.google.com/store/apps/details?id=org.donexa.opencarenet&hl=en-US"
+                        target="_blank"
+                        class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg flex items-center">
+                        <i class="fa-brands fa-google-play text-xl mr-2"></i> Get it on Google Play
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-xl">
+                <h3 class="font-bold text-xl border-b border-slate-700 pb-3 mb-4">App Information</h3>
+                <ul class="space-y-4 text-sm text-slate-300">
+                    <li class="flex justify-between"><span>Developer:</span> <span
+                            class="font-semibold text-white">Dieudonne Assumani</span></li>
+                    <li class="flex justify-between"><span>Categories:</span> <span
+                            class="font-semibold text-white text-right">Community Health Management</span></li>
+                    <li class="flex justify-between"><span>License:</span> <span
+                            class="font-semibold text-white">MIT</span></li>
+                    <li class="flex justify-between"><span>Last Update:</span> <span
+                            class="font-semibold text-white">2024-03-10</span></li>
+                </ul>
+                <!-- <div class="mt-6 pt-4 border-t border-slate-700">
+                    <a href="#" class="block text-center text-primary hover:text-white transition font-semibold">
+                        <i class="fa-brands fa-github mr-1"></i> Browse Source Code
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-secondary">Core Features</h2>
+            <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Built to support comprehensive community health management
+                across multiple districts with scalable architecture.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <i class="fa-solid fa-mobile-screen text-3xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Mobile Data Collection</h3>
+                <p class="text-slate-600 text-sm">Seamlessly capture and manage patient data locally on the device with
+                    an intuitive interface.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <i class="fa-solid fa-wifi text-3xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Offline Functionality</h3>
+                <p class="text-slate-600 text-sm">Continue working without interruptions in low-connectivity areas. Data
+                    syncs automatically when back online.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <i class="fa-solid fa-server text-3xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">DHIS2 & OpenClinic GA Interop</h3>
+                <p class="text-slate-600 text-sm">Built-in interoperability allowing for transparent data aggregation
+                    and seamless integration with national health databases.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <i class="fa-solid fa-language text-3xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Multilingual Contexts</h3>
+                <p class="text-slate-600 text-sm">Configurable language settings to enhance communication and usage in
+                    diverse cultural contexts.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <i class="fa-solid fa-map-location-dot text-3xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Geolocation Tracking</h3>
+                <p class="text-slate-600 text-sm">Transparent reference and geolocation functionalities to map health
+                    trends and improve patient care.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                <i class="fa-solid fa-chart-pie text-3xl text-primary mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Data Aggregation</h3>
+                <p class="text-slate-600 text-sm">Generate detailed health reports and aggregate primary data
+                    efficiently for stakeholders.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy-policy" class="bg-white py-20 px-8 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto prose prose-slate">
+            <h2 class="text-3xl font-bold text-secondary border-b pb-4 mb-8">Privacy Policy</h2>
+
+            <p class="text-sm text-slate-500 mb-8"><strong>Effective Date:</strong> March 2024</p>
+
+            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">1. Introduction</h3>
+            <p class="text-slate-600 mb-6">
+                Donexa ("we," "our," or "us") operates the OpenCarenet CHE application. This Privacy Policy outlines how
+                we collect, use, manage, and protect your information when you use our mobile application, particularly
+                regarding the handling of sensitive health information.
+            </p>
+
+            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">2. Information Collection and Use</h3>
+            <p class="text-slate-600 mb-6">
+                OpenCarenet CHE is designed for Community Health Workers to collect Electronic Health Records (EHR) and
+                clinic management data. The app collects:
+            <ul class="list-disc pl-6 mt-2 text-slate-600 space-y-2">
+                <li><strong>Patient Data:</strong> Demographics, medical history, and health metrics required for
+                    primary care tracking.</li>
+                <li><strong>Geolocation Data:</strong> Location data is collected to map health trends, disease
+                    outbreaks, and verify the coverage areas of community health workers.</li>
+                <li><strong>Device Information:</strong> Data necessary for the offline functionality and
+                    synchronization of the app.</li>
+            </ul>
+            </p>
+
+            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">3. Data Storage, Offline Functionality, and
+                Synchronization</h3>
+            <p class="text-slate-600 mb-6">
+                Due to the nature of operating in areas with limited internet connectivity, OpenCarenet CHE stores
+                patient data locally on your device in a secure, encrypted format. Once an internet connection is
+                established, this data is securely aggregated and synchronized with centralized databases, specifically
+                utilizing interoperability with <strong>DHIS2</strong> and <strong>OpenClinic GA</strong>.
+            </p>
+
+            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">4. Data Sharing and Disclosure</h3>
+            <p class="text-slate-600 mb-6">
+                We do not sell, rent, or trade patient data. Data collected via the app is only transmitted to the
+                authorized national or organizational health information systems (such as DHIS2) configured by your
+                deploying health organization.
+            </p>
+
+            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">5. Security</h3>
+            <p class="text-slate-600 mb-6">
+                We value your trust in providing us with health data. We employ industry-standard security measures,
+                including data encryption both at rest (on the device) and in transit (during synchronization), to
+                protect against unauthorized access or alteration of data.
+            </p>
+
+            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">6. Contact Us</h3>
+            <p class="text-slate-600 mb-6">
+                If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at
+                <strong>info.donexa@gmail.com</strong>.
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-slate-400 py-8 px-8 border-t border-slate-800 text-center text-sm">
+        <p>© Copyright Donexa. All rights reserved. OpenCarenet CHE is licensed under LGPLv2.</p>
+    </footer>
+
+</body>
+
+</html>

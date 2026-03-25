@@ -5,180 +5,261 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We are an organization that provides IT solutions adapted and specific to the different
-    challenges that our society faces for its sustainable development.">
+    <meta name="description"
+        content="We are an organization that provides IT solutions adapted and specific to the different challenges that our society faces for its sustainable development.">
     <meta name="keywords"
         content="donexa, donaxia, Donexa, Software development company, IT services provider, IT solutions, organization">
     <meta name="title" content="Donexa | For an organized world">
     <title>Donexa | For an organized world</title>
-    <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="./assets/favicons/site.webmanifest">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb', // Tailwind Blue-600
+                        secondary: '#1e293b', // Tailwind Slate-800
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8K0M84YX3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-W8K0M84YX3');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8K0M84YX3"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-W8K0M84YX3');
-</script>
 
-<body>
-    <div class="nav-header">
-        <div class="social-nav">
-            <a target="_blank" href="https://facebook.com/donexa"><i class="fa-brands fa-facebook"></i></a>
-            <a target="_blank" href="https://twitter.com/donexa"><i class="fa-brands fa-twitter"></i></a>
-            <a target="_blank" href="https://instagram.com/donexa"><i class="fa-brands fa-instagram"></i></a>
-            <a target="_blank" href="https://youtube.com/donexa"><i class="fa-brands fa-youtube"></i></a>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <div class="hidden md:flex justify-between items-center bg-secondary text-slate-300 text-sm px-8 py-2">
+        <div class="flex space-x-4">
+            <a target="_blank" href="https://facebook.com/donexa" class="hover:text-white transition"><i
+                    class="fa-brands fa-facebook"></i></a>
+            <a target="_blank" href="https://twitter.com/donexa" class="hover:text-white transition"><i
+                    class="fa-brands fa-twitter"></i></a>
+            <a target="_blank" href="https://instagram.com/donexa" class="hover:text-white transition"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a target="_blank" href="https://youtube.com/donexa" class="hover:text-white transition"><i
+                    class="fa-brands fa-youtube"></i></a>
         </div>
-
-        <div class="social-nav contact-nav">
-            <a href="mailto:info.donexa@gmail.com" class="icon-text flex column-gap-middle mail-contact">
+        <div class="flex space-x-6">
+            <a href="mailto:info.donexa@gmail.com" class="flex items-center space-x-2 hover:text-white transition">
                 <i class="fa fa-envelope"></i>
-                <p>info.donexa@gmail.com</p>
+                <span>info.donexa@gmail.com</span>
             </a>
-            <a class="icon-text flex column-gap-middle">
+            <div class="flex items-center space-x-2">
                 <i class="fa fa-clock"></i>
-                <p>Mon - Sat 8:00am - 4:00pm, Sunday - CLOSED</p>
-            </a>
+                <span>Mon - Sat 8:00am - 4:00pm, Sunday - CLOSED</span>
+            </div>
         </div>
     </div>
-    <nav>
-        <div class="nav">
-            <img src="./assets/images/logo.png" />
-            <div class="nav-actions">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-sm px-8 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <img src="./assets/images/logo.png" alt="Donexa Logo" class="h-10"
+                onerror="this.src='https://via.placeholder.com/150x50?text=DONEXA'" />
+            <div class="hidden md:flex space-x-6 text-sm font-semibold text-secondary">
+                <a href="#welcome" class="hover:text-primary transition">Home</a>
+                <a href="#about" class="hover:text-primary transition">About</a>
+                <a href="#industries" class="hover:text-primary transition">Industries</a>
+                <a href="#contact-us" class="hover:text-primary transition">Contact</a>
             </div>
         </div>
     </nav>
-    <section id="welcome" class="d-padding">
-        <p class="large-subtitle">Welcome to donexa,</p>
-        <h1 class="large-title">We are an organization that provides IT solutions adapted and specific to the different
-            challenges that our society faces for its sustainable development.</h1>
-    </section>
-    <section id="about">
-        <img id="about-img-large"
-            src="https://www.who.int/images/default-source/wpro/health-topic/child-health/f5-140042016-vu-03019.tmb-1024v.jpg?sfvrsn=1e211b8d_3"
-            alt="" />
-        <div class="about-card d-padding">
-            <p>ABOUT US</p>
-            <h1 class="headline1">A world organized for a better world</h1>
-            <p class="large-subtitle">We work in information and communication technology to create an organized world,
-                our action plan is anchored in collaborative research, comprehensive, timely and efficient data
-                collection, analysis, processing and dissemination of information.</p>
-        </div>
-    </section>
-    <section id="industries" class="d-padding">
-        <p>INDUSTRIES</p>
-        <div class="industries-displayer">
-            <h1 class="large-title">Health</h1>
-            <p class="p-medium">
-                Helps in delivering more accurate, actionable, and accessible information related to a patient’s health
-                that can be customized to meet the individual’s needs.
-                </br></br>
-                Allows better and faster decisions related to health risks that affect an individual as well as the
-                public.
-                </br></br>
-                Supports communication between patients and healthcare professionals and helps in decision-making.
-                </br></br>
-                Helps build networks of social support for both patients as well as healthcare professionals.
-                </br></br>
-                Improves awareness among patients as well as the general public about health-related matters that can
-                lead to positive outcomes.
+
+    <section id="welcome" class="relative bg-white py-24 px-8 text-center overflow-hidden border-b border-slate-200">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <p class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Welcome to Donexa</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-secondary leading-tight mb-6">
+                We provide IT solutions adapted for <span class="text-primary">sustainable development.</span>
+            </h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-8">
+                Addressing the challenges our society faces with specific, modern, and reliable technology solutions.
             </p>
-        </div>
-        <div class="industries-displayer">
-            <h1 class="large-title">Education</h1>
-            <p class="p-medium">
-                Accurate and right information is necessary for effective teaching and learning.
-                </br></br>
-                Creates a more engaged environment.
-                </br></br>
-                Incorporates different learning styles.
-                </br></br>
-                Improves collaboration.
-                </br></br>
-                Prepares children for the future.
-                </br></br>
-                Connects with students.
-            </p>
+            <a href="#contact-us"
+                class="inline-block bg-primary text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transition duration-300">
+                Partner With Us
+            </a>
         </div>
     </section>
-    <section id="contact-us" class="d-padding">
-        <p>TALK TO US</p>
-        <h1 class="large-title">You are a company, an organization or a government, and you want to invest in good IT
-            tools to support your emergence, this is what we are for.</h1>
-        <form class="contact-us-form">
-            <div className="input-labeled">
-                <input type="name" placeholder="Company/Organization Name" name="Name" required></input>
+
+    <section id="about" class="py-24 px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <img src="./assets/images/kids.jpg" alt="Child Health"
+                class="rounded-2xl shadow-2xl object-cover h-96 w-full transform hover:scale-[1.02] transition duration-500" />
+            <div>
+                <p class="text-primary font-bold text-sm tracking-widest uppercase mb-2">About Us</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-6">A world organized for a better world</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    We work in information and communication technology to create an organized world. Our action plan is
+                    anchored in collaborative research, comprehensive, timely, and efficient data collection, analysis,
+                    processing, and dissemination of information.
+                </p>
             </div>
-            <div className="input-labeled">
-                <input type="name" placeholder="Company/Organization Email" name="Email" required></input>
-            </div>
-            <div className="input-labeled">
-                <textarea type="name" placeholder="Message" name="Message" required></textarea>
-            </div>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-    <section id="guarantie">
-        <div class="about-card d-padding">
-            <p>WHAT WE GUARANTEE</p>
-            <h1 class="headline1">A centralized system</h1>
-            <p class="large-subtitle">We take the necessary time to carefully study the feasibility of a centralized
-                system guaranteeing a maximum rate of accuracy (concordance rate), completeness, promptness and validity
-                of the information.</p>
         </div>
-        <img id="about-img-large"
-            src="https://www.hpe.com/content/dam/hpe/insights/articles/2019/05/building-diversity-in-tech-with-black-girls-code/featuredStory/Building-diversity-in-tech-with-Black-Girls-Code.jpg.transform/nxt-original/image.jpeg"
-            alt="" />
     </section>
-    <footer>
-        <div class="footer-block">
-            <img id="logo-footer" src="./assets/images/logo.png" />
-            <div class="footer-block-menu">
-                <p>We are an organization that provides IT solutions adapted and specific to the different
+
+    <section id="industries" class="bg-slate-100 py-24 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-primary font-bold text-sm tracking-widest uppercase mb-2">Industries</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary">Sectors We Empower</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                    class="bg-white p-10 rounded-2xl shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-secondary mb-4">Health</h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> Delivers
+                            accurate, accessible patient information customized to individual needs.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> Allows
+                            faster decisions regarding public and individual health risks.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> Supports
+                            clear communication between patients and healthcare professionals.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> Builds
+                            networks of social support and improves general health awareness.</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-white p-10 rounded-2xl shadow-lg border border-slate-100 hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-14 h-14 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-secondary mb-4">Education</h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> Provides
+                            accurate information necessary for effective teaching and learning.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> Creates a
+                            highly engaged and interactive environment.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i>
+                            Incorporates varying learning styles for diverse student needs.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-primary mt-1 mr-3"></i> Connects
+                            with students and prepares them for future challenges.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="guarantie" class="py-24 px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <p class="text-primary font-bold text-sm tracking-widest uppercase mb-2">What We Guarantee</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-6">A centralized system</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    We take the necessary time to carefully study the feasibility of a centralized system, guaranteeing
+                    a maximum rate of accuracy (concordance rate), completeness, promptness, and validity of the
+                    information.
+                </p>
+            </div>
+            <img src="./assets/images/lab.jpg" alt="Tech Diversity"
+                class="order-1 md:order-2 rounded-2xl shadow-2xl object-cover h-96 w-full transform hover:scale-[1.02] transition duration-500" />
+        </div>
+    </section>
+
+    <section id="contact-us" class="bg-white py-24 px-8 border-t border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-primary font-bold text-sm tracking-widest uppercase mb-2">Talk To Us</p>
+            <h2 class="text-3xl font-bold text-secondary mb-6">Invest in the right IT tools</h2>
+            <p class="text-slate-600 mb-10 text-lg">Whether you are a company, an organization, or a government looking
+                to support your emergence, this is what we are built for.</p>
+
+            <form class="space-y-6 text-left" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="016130b3-769f-4102-bf29-2540a90d6a8a">
+                <input type="hidden" name="subject" value="New Inquiry From Donexa Website" />
+                <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+                <input type="checkbox" name="botcheck" id="" style="display: none;" />
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Organization Name</label>
+                        <input type="text" placeholder="e.g. Acme Corp" name="Name" required
+                            class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition bg-slate-50">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                        <input type="email" placeholder="email@organization.com" name="Email" required
+                            class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition bg-slate-50">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                    <textarea rows="4" placeholder="How can we help you?" name="Message" required
+                        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition bg-slate-50"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-4 rounded-lg shadow-md transition duration-300">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-slate-400 py-16 px-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+
+            <div class="space-y-6">
+                <img src="./assets/images/logo.png" alt="Donexa Logo" class="h-10 opacity-90" />
+                <p class="text-sm leading-relaxed">We provide IT solutions adapted and specific to the different
                     challenges that our society faces for its sustainable development.</p>
             </div>
-            <div class="social-nav">
-                <a target="_blank" href="https://facebook.com/donexa"><i class="fa-brands fa-facebook"></i></a>
-                <a target="_blank" href="https://twitter.com/donexa"><i class="fa-brands fa-twitter"></i></a>
-                <a target="_blank" href="https://instagram.com/donexa"><i class="fa-brands fa-instagram"></i></a>
-                <a target="_blank" href="https://youtube.com/donexa"><i class="fa-brands fa-youtube"></i></a>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 tracking-wide text-sm">PROJECTS</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="/opencarenet/" class="hover:text-primary transition">OpenCarenet Community Health Edition</a>
+                    </li>
+                    <li><a href="#" class="hover:text-primary transition">Viepronet</a>
+                    </li>
+                </ul>
             </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 tracking-wide text-sm">PARTNERS</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="https://www.post-factum.be/" target="_blank" class="hover:text-primary transition">Post
+                            Factum</a></li>
+                    <li><a href="https://interconnecting.bi" target="_blank"
+                            class="hover:text-primary transition">INTERCONNECTING Burundi</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 tracking-wide text-sm">CONFERENCES ATTENDED</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="https://sncsu.online" target="_blank"
+                            class="hover:text-primary transition">SNCSU-Helina 2022</a></li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="footer-block">
-            <p class="p-medium">PROJECTS</p>
-            <div class="footer-block-menu">
-                <a>Donexa Health Information System - DHISYS</a>
-                <a>National Identification System - NISYS</a>
-            </div>
-        </div>
-        <div class="footer-block">
-            <p class="p-medium">PARTNERS</p>
-            <div class="footer-block-menu">
-                <a href="https://www.italcham.co.za" target="_blank">ITALY-AFRICA Chamber of Commerce</a>
-                <a href="https://mandatconsultance.kirobezo.org" target="_blank">Mandat Consultance</a>
-                <!-- <a href="https://sites.google.com/site/openclinicga1/" target="_blank">Open-Clinic GA</a> -->
-                <a>Hope for Africa</a>
-            </div>
-        </div>
-        <div class="footer-block">
-            <p class="p-medium">CONFERENCE ATTENDED</p>
-            <div class="footer-block-menu">
-                <a href="https://sncsu.online" target="_blank">SNCSU-Helina 2022</a>
-            </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-700 text-sm text-center">
+            <p>© Copyright Donexa. All rights reserved.</p>
         </div>
     </footer>
-    <div class="closer d-padding">
-        <p>© Copyright donexa. All rights reserved</p>
-    </div>
+
 </body>
 
 </html>
