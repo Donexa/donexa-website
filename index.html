@@ -73,12 +73,26 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <img src="./assets/images/logo.png" alt="Donexa Logo" class="h-10"
                 onerror="this.src='https://via.placeholder.com/150x50?text=DONEXA'" />
+
             <div class="hidden md:flex space-x-6 text-sm font-semibold text-secondary">
                 <a href="#welcome" class="hover:text-primary transition">Home</a>
                 <a href="#about" class="hover:text-primary transition">About</a>
                 <a href="#industries" class="hover:text-primary transition">Industries</a>
                 <a href="#contact-us" class="hover:text-primary transition">Contact</a>
             </div>
+
+            <button id="mobile-menu-btn"
+                class="md:hidden text-secondary text-2xl focus:outline-none hover:text-primary transition">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden mt-4 flex-col space-y-4 text-sm font-semibold text-secondary text-center border-t border-slate-100 pt-4 pb-2">
+            <a href="#welcome" class="hover:text-primary transition mobile-link">Home</a>
+            <a href="#about" class="hover:text-primary transition mobile-link">About</a>
+            <a href="#industries" class="hover:text-primary transition mobile-link">Industries</a>
+            <a href="#contact-us" class="hover:text-primary transition mobile-link">Contact</a>
         </div>
     </nav>
 
@@ -227,7 +241,8 @@
             <div>
                 <h4 class="text-white font-bold mb-6 tracking-wide text-sm">PROJECTS</h4>
                 <ul class="space-y-3 text-sm">
-                    <li><a href="/opencarenet/" class="hover:text-primary transition">OpenCarenet Community Health Edition</a>
+                    <li><a href="/opencarenet/" class="hover:text-primary transition">OpenCarenet Community Health
+                            Edition</a>
                     </li>
                     <li><a href="#" class="hover:text-primary transition">Viepronet</a>
                     </li>
@@ -259,6 +274,21 @@
         </div>
     </footer>
 
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -19,191 +19,365 @@
                 extend: {
                     colors: {
                         primary: '#2563eb', // Blue
-                        secondary: '#1e293b', // Slate
+                        secondary: '#0f172a', // Deeper Slate
                         accent: '#10b981', // Emerald/Green for health
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Base class for elements that will be animated on scroll */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        /* Class added via JS when element enters viewport */
+        .scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary selection:text-white">
 
-    <nav class="sticky top-0 z-50 bg-white shadow-sm px-8 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-notes-medical text-primary text-2xl"></i>
-                <span class="text-xl font-bold text-secondary">OpenCarenet CHE</span>
+    <nav
+        class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-100 p-2 rounded-lg">
+                    <i class="fa-solid fa-notes-medical text-primary text-2xl"></i>
+                </div>
+                <span class="text-xl font-extrabold text-secondary tracking-tight">OpenCarenet CHE</span>
             </div>
-            <div class="hidden md:flex space-x-6 text-sm font-semibold text-secondary">
+
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
                 <a href="#features" class="hover:text-primary transition">Features</a>
-                <a href="#details" class="hover:text-primary transition">Project Details</a>
+                <a href="#details" class="hover:text-primary transition">App Details</a>
                 <a href="#privacy-policy" class="hover:text-primary transition">Privacy Policy</a>
-                <a href="/" class="text-slate-400 hover:text-primary transition">Back to Donexa</a>
+                <a href="/" class="text-slate-400 hover:text-primary transition flex items-center">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> Donexa
+                </a>
             </div>
+
+            <button id="mobile-menu-btn"
+                class="md:hidden text-secondary text-2xl focus:outline-none hover:text-primary transition">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden flex-col bg-white border-t border-slate-100 shadow-lg absolute w-full left-0">
+            <a href="#features"
+                class="mobile-link block px-8 py-4 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-primary transition border-b border-slate-50">Features</a>
+            <a href="#details"
+                class="mobile-link block px-8 py-4 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-primary transition border-b border-slate-50">App
+                Details</a>
+            <a href="#privacy-policy"
+                class="mobile-link block px-8 py-4 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-primary transition border-b border-slate-50">Privacy
+                Policy</a>
+            <a href="/"
+                class="mobile-link block px-8 py-4 text-sm font-semibold text-slate-400 hover:bg-slate-50 hover:text-primary transition"><i
+                    class="fa-solid fa-arrow-left mr-2"></i> Back to Donexa</a>
         </div>
     </nav>
 
-    <section class="bg-secondary text-white py-20 px-8">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-            <div class="md:col-span-2 space-y-6">
-                <div class="flex items-center space-x-3 mb-4">
-                    <span class="bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full"><i
-                            class="fa-brands fa-google-play mr-1"></i> Google Play</span>
+    <section
+        class="relative bg-gradient-to-br from-secondary via-slate-800 to-slate-900 text-white pt-32 pb-24 px-8 overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-primary/20 blur-3xl"></div>
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
+            <div class="md:col-span-2 space-y-8 animate-fade-in-up">
+                <div
+                    class="inline-flex items-center space-x-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full">
+                    <i class="fa-brands fa-google-play text-accent"></i>
+                    <span>Available on Google Play</span>
                 </div>
-                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-                    Enabling community health workers to collect data <span class="text-primary">efficiently.</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                    Empowering health workers to collect data <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-accent">efficiently.</span>
                 </h1>
-                <p class="text-lg text-slate-300 leading-relaxed">
-                    A robust and user-friendly application tailored for community health workers, facilitating seamless
-                    data collection, management, and reporting. Empowering health professionals to efficiently track
-                    patient information and aggregate primary data, even in areas with limited internet access.
+                <p class="text-lg text-slate-300 leading-relaxed max-w-2xl">
+                    A robust, offline-first application tailored for community health workers. Facilitate seamless data
+                    collection, patient management, and reporting—even in the most remote areas.
                 </p>
-                <div class="pt-4 flex space-x-4">
+                <div class="pt-2 flex flex-wrap gap-4">
                     <a href="https://play.google.com/store/apps/details?id=org.donexa.opencarenet&hl=en-US"
                         target="_blank"
-                        class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg flex items-center">
-                        <i class="fa-brands fa-google-play text-xl mr-2"></i> Get it on Google Play
+                        class="bg-primary hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/30 flex items-center transform hover:-translate-y-1">
+                        <i class="fa-brands fa-google-play text-2xl mr-3"></i> Get it on Google Play
                     </a>
                 </div>
             </div>
 
-            <div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-xl">
-                <h3 class="font-bold text-xl border-b border-slate-700 pb-3 mb-4">App Information</h3>
-                <ul class="space-y-4 text-sm text-slate-300">
-                    <li class="flex justify-between"><span>Developer:</span> <span
-                            class="font-semibold text-white">Dieudonne Assumani</span></li>
-                    <li class="flex justify-between"><span>Categories:</span> <span
-                            class="font-semibold text-white text-right">Community Health Management</span></li>
-                    <li class="flex justify-between"><span>License:</span> <span
-                            class="font-semibold text-white">MIT</span></li>
-                    <li class="flex justify-between"><span>Last Update:</span> <span
-                            class="font-semibold text-white">2024-03-10</span></li>
+            <div id="details"
+                class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl shadow-2xl animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                <h3 class="font-bold text-2xl border-b border-white/10 pb-4 mb-6 text-white">App Information</h3>
+                <ul class="space-y-5 text-sm text-slate-300">
+                    <li class="flex justify-between items-center"><span class="text-slate-400">Developer</span> <span
+                            class="font-bold text-white bg-white/10 px-3 py-1 rounded-md">Dieudonne Assumani</span></li>
+                    <li class="flex justify-between items-center"><span class="text-slate-400">Category</span> <span
+                            class="font-semibold text-white text-right">Medical / Health</span></li>
+                    <li class="flex justify-between items-center"><span class="text-slate-400">License</span> <span
+                            class="font-semibold text-white">MIT / LGPLv2</span></li>
+                    <li class="flex justify-between items-center"><span class="text-slate-400">Last Update</span> <span
+                            class="font-semibold text-accent">March 2024</span></li>
                 </ul>
-                <!-- <div class="mt-6 pt-4 border-t border-slate-700">
-                    <a href="#" class="block text-center text-primary hover:text-white transition font-semibold">
-                        <i class="fa-brands fa-github mr-1"></i> Browse Source Code
-                    </a>
-                </div> -->
             </div>
         </div>
     </section>
 
-    <section id="features" class="py-20 px-8 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-secondary">Core Features</h2>
-            <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Built to support comprehensive community health management
-                across multiple districts with scalable architecture.</p>
+    <section id="features" class="py-24 px-8 max-w-7xl mx-auto relative">
+        <div class="text-center mb-16 scroll-animate">
+            <h2 class="text-sm font-bold tracking-widest text-primary uppercase mb-3">Capabilities</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-secondary">Built for the Frontlines</h3>
+            <p class="text-slate-500 mt-4 max-w-2xl mx-auto text-lg">Comprehensive community health management designed
+                to scale across multiple districts smoothly.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fa-solid fa-mobile-screen text-3xl text-primary mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Mobile Data Collection</h3>
-                <p class="text-slate-600 text-sm">Seamlessly capture and manage patient data locally on the device with
-                    an intuitive interface.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+                class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-blue-100 transition-all duration-300 transform hover:-translate-y-2 group scroll-animate">
+                <div
+                    class="w-14 h-14 bg-blue-50 text-primary rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-secondary">Mobile Data Collection</h3>
+                <p class="text-slate-600 leading-relaxed">Seamlessly capture and manage patient data locally on the
+                    device with an intuitive, clutter-free interface.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fa-solid fa-wifi text-3xl text-primary mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Offline Functionality</h3>
-                <p class="text-slate-600 text-sm">Continue working without interruptions in low-connectivity areas. Data
-                    syncs automatically when back online.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-emerald-100 transition-all duration-300 transform hover:-translate-y-2 group scroll-animate"
+                style="animation-delay: 0.1s;">
+                <div
+                    class="w-14 h-14 bg-emerald-50 text-accent rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-secondary">Offline Functionality</h3>
+                <p class="text-slate-600 leading-relaxed">Continue working without interruptions in low-connectivity
+                    areas. Data syncs automatically when back online.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fa-solid fa-server text-3xl text-primary mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">DHIS2 & OpenClinic GA Interop</h3>
-                <p class="text-slate-600 text-sm">Built-in interoperability allowing for transparent data aggregation
-                    and seamless integration with national health databases.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-purple-100 transition-all duration-300 transform hover:-translate-y-2 group scroll-animate"
+                style="animation-delay: 0.2s;">
+                <div
+                    class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-secondary">DHIS2 & OpenClinic</h3>
+                <p class="text-slate-600 leading-relaxed">Built-in interoperability allowing for transparent data
+                    aggregation and seamless integration with national health databases.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fa-solid fa-language text-3xl text-primary mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Multilingual Contexts</h3>
-                <p class="text-slate-600 text-sm">Configurable language settings to enhance communication and usage in
-                    diverse cultural contexts.</p>
+            <div
+                class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 transform hover:-translate-y-2 group scroll-animate">
+                <div
+                    class="w-14 h-14 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-secondary">Multilingual Contexts</h3>
+                <p class="text-slate-600 leading-relaxed">Configurable language settings to enhance communication and
+                    usage in diverse cultural contexts.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fa-solid fa-map-location-dot text-3xl text-primary mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Geolocation Tracking</h3>
-                <p class="text-slate-600 text-sm">Transparent reference and geolocation functionalities to map health
-                    trends and improve patient care.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-red-100 transition-all duration-300 transform hover:-translate-y-2 group scroll-animate"
+                style="animation-delay: 0.1s;">
+                <div
+                    class="w-14 h-14 bg-red-50 text-red-500 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-secondary">Geolocation Tracking</h3>
+                <p class="text-slate-600 leading-relaxed">Transparent reference and geolocation functionalities to map
+                    health trends and improve patient care.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fa-solid fa-chart-pie text-3xl text-primary mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Data Aggregation</h3>
-                <p class="text-slate-600 text-sm">Generate detailed health reports and aggregate primary data
-                    efficiently for stakeholders.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-blue-100 transition-all duration-300 transform hover:-translate-y-2 group scroll-animate"
+                style="animation-delay: 0.2s;">
+                <div
+                    class="w-14 h-14 bg-blue-50 text-primary rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-secondary">Data Aggregation</h3>
+                <p class="text-slate-600 leading-relaxed">Generate detailed health reports and aggregate primary data
+                    efficiently for stakeholders and decision-makers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy-policy" class="bg-white py-24 px-8 border-t border-slate-200">
+        <div
+            class="max-w-4xl mx-auto bg-slate-50 p-8 md:p-12 rounded-3xl border border-slate-200 shadow-sm scroll-animate">
+            <div class="flex items-center space-x-3 mb-8 border-b border-slate-200 pb-6">
+                <i class="fa-solid fa-shield-halved text-3xl text-primary"></i>
+                <h2 class="text-3xl font-extrabold text-secondary">Privacy Policy</h2>
+            </div>
+
+            <p class="text-sm font-semibold text-primary mb-8 bg-blue-50 inline-block px-4 py-2 rounded-lg">Effective
+                Date: March 2024</p>
+
+            <div class="space-y-8 text-slate-600 leading-relaxed">
+                <div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">1. Introduction</h3>
+                    <p>Donexa ("we," "our," or "us") operates the OpenCarenet CHE application. This Privacy Policy
+                        outlines how we collect, use, manage, and protect your information when you use our mobile
+                        application, particularly regarding the strict handling of sensitive health information.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">2. Information Collection and Use</h3>
+                    <p class="mb-3">OpenCarenet CHE is designed for Community Health Workers to collect Electronic
+                        Health Records (EHR) and clinic management data. The app collects:</p>
+                    <ul class="list-none space-y-3 pl-0">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                            <span><strong>Patient Data:</strong> Demographics, medical history, and health metrics
+                                required for primary care tracking.</span>
+                        </li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                            <span><strong>Geolocation Data:</strong> Location data is collected strictly to map health
+                                trends, track disease outbreaks, and verify coverage areas.</span>
+                        </li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-accent mt-1 mr-3"></i>
+                            <span><strong>Device Information:</strong> Data necessary for the offline functionality and
+                                synchronization of the app.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-secondary mb-3 flex items-center"><i
+                            class="fa-solid fa-database text-primary mr-2"></i> 3. Data Storage and Security</h3>
+                    <p class="mb-3">Due to the nature of operating in areas with limited internet connectivity,
+                        OpenCarenet CHE stores patient data <strong>locally on your device in a secure, encrypted
+                            format</strong> using industry-standard AES encryption.</p>
+                    <p>Once an internet connection is established, this data is securely transmitted via HTTPS/TLS
+                        protocols and aggregated with centralized databases (specifically utilizing interoperability
+                        with <strong>DHIS2</strong> and <strong>OpenClinic GA</strong>). Data is stored on secure,
+                        government or organizational-approved servers corresponding to your health district. We employ
+                        strict access controls to prevent unauthorized access.</p>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm scroll-animate">
+                    <h3 class="text-xl font-bold text-secondary mb-4 flex items-center">
+                        <i class="fa-solid fa-trash-can text-red-500 mr-2"></i> 4. Data Retention and Deletion Policy
+                    </h3>
+                    <p class="mb-4">
+                        We respect your right to control your data. Since <strong>OpenCarenet CHE</strong> operates
+                        primarily as an offline-first tool, most sensitive data remains on your physical device until
+                        synchronized.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-6 mt-6">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <h4 class="font-bold text-secondary mb-2 flex items-center">
+                                <i class="fa-solid fa-gears mr-2 text-primary"></i>Android System Wipe
+                            </h4>
+                            <p class="text-sm mb-3">To reset the application to its original state via your phone
+                                settings:</p>
+                            <ol class="text-xs space-y-1 list-decimal pl-4">
+                                <li>Open device <strong>Settings</strong></li>
+                                <li>Go to <strong>Apps</strong> > OpenCarenet CHE</li>
+                                <li>Tap <strong>Storage</strong> > <strong>Clear Data / Clear Cache</strong></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-slate-500 italic mt-4">Note: Aggregated, anonymized health data previously synced
+                        to national databases (like DHIS2) may be retained by public health authorities for
+                        epidemiological tracking, as permitted by law.</p>
+
+                    <div class="mt-8 pt-6 border-t border-slate-200">
+                        <h4 class="font-bold text-secondary mb-2">Requesting Server-Side Deletion</h4>
+                        <p class="text-sm mb-4">
+                            If your data has already been synchronized (aggregated) to the central server and you wish
+                            to have it removed from the organizational database:
+                        </p>
+                        <a href="mailto:info.donexa@gmail.com?subject=Data%20Deletion%20Request"
+                            class="inline-flex items-center text-primary font-bold hover:underline">
+                            <i class="fa-solid fa-envelope mr-2"></i> info.donexa@gmail.com
+                        </a>
+                        <p class="text-xs text-slate-500 mt-2">
+                            Please use the subject line <strong>"Data Deletion Request"</strong>. We will coordinate
+                            with the relevant health district authorities to process your request within 14 business
+                            days.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">5. Data Sharing and Disclosure</h3>
+                    <p>We absolutely <strong>do not sell, rent, or trade patient data</strong>. Data collected via the
+                        app is only transmitted to authorized national or organizational health information systems
+                        configured by your deploying health organization.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">6. Contact Us</h3>
+                    <p>If you have any questions or suggestions about our Privacy Policy or data handling practices,
+                        please contact us securely at <strong>info.donexa@gmail.com</strong>.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="privacy-policy" class="bg-white py-20 px-8 border-t border-slate-200">
-        <div class="max-w-4xl mx-auto prose prose-slate">
-            <h2 class="text-3xl font-bold text-secondary border-b pb-4 mb-8">Privacy Policy</h2>
-
-            <p class="text-sm text-slate-500 mb-8"><strong>Effective Date:</strong> March 2024</p>
-
-            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">1. Introduction</h3>
-            <p class="text-slate-600 mb-6">
-                Donexa ("we," "our," or "us") operates the OpenCarenet CHE application. This Privacy Policy outlines how
-                we collect, use, manage, and protect your information when you use our mobile application, particularly
-                regarding the handling of sensitive health information.
-            </p>
-
-            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">2. Information Collection and Use</h3>
-            <p class="text-slate-600 mb-6">
-                OpenCarenet CHE is designed for Community Health Workers to collect Electronic Health Records (EHR) and
-                clinic management data. The app collects:
-            <ul class="list-disc pl-6 mt-2 text-slate-600 space-y-2">
-                <li><strong>Patient Data:</strong> Demographics, medical history, and health metrics required for
-                    primary care tracking.</li>
-                <li><strong>Geolocation Data:</strong> Location data is collected to map health trends, disease
-                    outbreaks, and verify the coverage areas of community health workers.</li>
-                <li><strong>Device Information:</strong> Data necessary for the offline functionality and
-                    synchronization of the app.</li>
-            </ul>
-            </p>
-
-            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">3. Data Storage, Offline Functionality, and
-                Synchronization</h3>
-            <p class="text-slate-600 mb-6">
-                Due to the nature of operating in areas with limited internet connectivity, OpenCarenet CHE stores
-                patient data locally on your device in a secure, encrypted format. Once an internet connection is
-                established, this data is securely aggregated and synchronized with centralized databases, specifically
-                utilizing interoperability with <strong>DHIS2</strong> and <strong>OpenClinic GA</strong>.
-            </p>
-
-            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">4. Data Sharing and Disclosure</h3>
-            <p class="text-slate-600 mb-6">
-                We do not sell, rent, or trade patient data. Data collected via the app is only transmitted to the
-                authorized national or organizational health information systems (such as DHIS2) configured by your
-                deploying health organization.
-            </p>
-
-            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">5. Security</h3>
-            <p class="text-slate-600 mb-6">
-                We value your trust in providing us with health data. We employ industry-standard security measures,
-                including data encryption both at rest (on the device) and in transit (during synchronization), to
-                protect against unauthorized access or alteration of data.
-            </p>
-
-            <h3 class="text-xl font-bold text-secondary mt-8 mb-4">6. Contact Us</h3>
-            <p class="text-slate-600 mb-6">
-                If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at
-                <strong>info.donexa@gmail.com</strong>.
-            </p>
+    <footer class="bg-secondary text-slate-400 py-10 px-8 text-center text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <i class="fa-solid fa-notes-medical text-3xl text-slate-600 mb-4"></i>
+            <p class="mb-2">© Copyright Donexa. All rights reserved.</p>
+            <p>OpenCarenet CHE is licensed under LGPLv2.</p>
         </div>
-    </section>
-
-    <footer class="bg-secondary text-slate-400 py-8 px-8 border-t border-slate-800 text-center text-sm">
-        <p>© Copyright Donexa. All rights reserved. OpenCarenet CHE is licensed under LGPLv2.</p>
     </footer>
 
+    <script>
+        // --- Mobile Menu Logic ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+
+        // --- Scroll Animation Logic ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 
 </html>
